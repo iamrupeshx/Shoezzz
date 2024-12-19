@@ -1,0 +1,450 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  nav {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  nav .logo img {
+    height: 50px;
+  }
+  
+  nav .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav .nav-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+  }
+  
+  nav .nav-links li a:hover {
+    color: #ff6f61;
+  }
+  
+  nav .search-bar input, nav .search-bar button {
+    border: none;
+    padding: 8px;
+  }
+  
+  nav .search-bar button {
+    background-color: #ff6f61;
+    color: white;
+    cursor: pointer;
+  }
+  
+  nav .search-bar button:hover {
+    background-color: #e85b50;
+  }
+  
+  /* Hero Section */
+ /* Hero Section Animations */
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  @keyframes zoomIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Assign Animations */
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 1.5s ease-in-out;
+  }
+  
+  .animate-bounce {
+    animation: bounce 2s infinite;
+  }
+  
+  .animate-zoom-in {
+    animation: zoomIn 1.5s ease-in-out;
+  }
+  
+  /* Additional Styling for Hero Section */
+  header.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #1e1e1e;
+    color: white;
+  }
+  
+  .hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+  
+  .hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content .cta-button {
+    display: inline-block;
+    background-color: #ff6f61;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hero-content .cta-button:hover {
+    background-color: #e85b50;
+  }
+  
+  /* Hover Effect for Hero Image */
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease, filter 0.5s ease;
+  }
+  
+  .hero-image img:hover {
+    transform: scale(1.05); /* Slightly zoom in */
+    filter: brightness(1.2); /* Brighten the image */
+  }
+  
+  
+  
+  /* Featured Section Styling */
+/* Featured Section Styling */
+/* Featured Section Styling */
+.featured {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fff;
+  }
+  
+  .featured h2 {
+    margin-bottom: 20px;
+  }
+  
+  .featured-cards {
+    display: flex;
+    justify-content: space-between; /* Distribute the cards evenly */
+    gap: 20px;
+    flex-wrap: nowrap; /* Prevents wrapping to keep cards in one line */
+    max-width: 100%; /* Ensure the cards stay within the container */
+  }
+  
+  .card {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    opacity: 0;
+    transform: translateX(-100%); /* Start off-screen to the left */
+    width: 30%; /* Set a width of 30% for each card */
+    height: 350px; /* Set a fixed height for the cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Animation for Cards to Move from Left to Right */
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Apply Animation to Cards */
+  .featured-cards .card {
+    animation: slideInLeft 0.5s ease-out forwards;
+    animation-delay: 0.2s; /* Adjust delay for each card */
+  }
+  
+  .card:hover {
+    transform: translateY(-10px); /* Slight lift effect */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+  }
+  
+  /* Animation for Images */
+  @keyframes zoomInHover {
+    0% {
+      transform: scale(1);
+      filter: brightness(1);
+    }
+    100% {
+      transform: scale(1.1); /* Slight zoom in */
+      filter: brightness(1.2); /* Brighten the image */
+    }
+  }
+  
+  /* Image Styling */
+  .card img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures the image covers the area without distorting */
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: transform 0.5s ease, filter 0.5s ease; /* Smooth transition */
+  }
+  
+  .card img:hover {
+    animation: zoomInHover 0.5s forwards; /* Applies zoom and brightness */
+  }
+  
+  /* Button Styling */
+  .card-button {
+    display: inline-block;
+    background-color: #ff6f61;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .card-button:hover {
+    background-color: #e85b50;
+  }
+  
+ /* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .footer-logo {
+    max-width: 300px;
+  }
+  
+  .footer-logo img {
+    height: 60px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-logo p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .footer-links h3, .footer-contact h3, .footer-social h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links ul li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-links ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+  }
+  
+  .footer-links ul li a:hover {
+    color: #ff6f61;
+  }
+  
+  .footer-contact p {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .footer-contact i {
+    margin-right: 10px;
+    color: #ff6f61;
+  }
+  
+  .footer-social a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 18px;
+    color: white;
+  }
+  
+  .footer-social a:hover {
+    color: #ff6f61;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+  }
+  .footer-social a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.footer-social img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social img:hover {
+    transform: scale(1.2);
+}
+.footer-social img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+  background-color: transparent; /* Ensures no background color */
+  border: none; /* Removes any border around the image */
+}
+.footer-social img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+  background-color: transparent; /* Ensures no background color */
+  border: none; /* Removes any border around the image */
+}
+
+.footer-social img:hover {
+  transform: scale(1.2);
+}
+
+
+.footer-social img:hover {
+  transform: scale(1.2);
+}
+
+
+  
+  /* Responsive Footer */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-social {
+      margin-top: 20px;
+    }
+  }
+  
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 1s ease-in-out;
+  }
+  
+  .animate-zoom-in {
+    animation: zoomIn 1.2s ease-in-out;
+  }
+  
+  .animate-slide-in {
+    animation: slideUp 0.8s ease-in-out;
+  }
+  
